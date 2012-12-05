@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Javascript App</title>
+<script type="text/javascript" src="libs/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+$("#Xwins").hide();
+$("#Owins").hide();
+$("#Draw").hide();
+var app = tictactoe.initialize();
+$(".square").live("click", function(event){
+	app.addMarker(event);
+});
+</script>
+<style>
+*
+{
+	padding:0;
+	margin:0;
+	letter-spacing:normal;
+	font-size:0;
+}
+.square
+{
+	border: thin solid black;
+	width:50px;
+	height:50px;
+	display:inline-block;
+}
+.square:hover
+{
+	background-color:#CCC;
+}
+.X
+{
+	background-color:#000;
+}
+.X:hover
+{
+	background-color:#000;
+}
+.O
+{
+	background-color:red;
+}
+.O:hover
+{
+	background-color:red;	
+}
+</style>
+</head>
+<body>
+	<div>
+		<span id="Xwins">X wins</span>
+		<span id="Owins">O wins</span>
+		<span id="Draw">Game is a draw</span>
+	</div>
+	<div id="tttwrapper">
+		<div id="s0" class="square"></div><div id="s1" class="square"></div><div id="s2" class="square"></div>
+		<br/>
+		<div id="s3" class="square"></div><div id="s4" class="square"></div><div id="s5" class="square"></div>
+		<br/>
+		<div id="s6" class="square"></div><div id="s7" class="square"></div><div id="s8" class="square"></div>
+	</div>
+</body>
+</html>
